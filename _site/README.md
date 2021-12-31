@@ -1,7 +1,6 @@
 
 # Decentralized Over the counter
 ## [English](/en) 
-##  [中文](/cn)
 &ensp;&ensp;&ensp;&ensp; DOTC是Decentralized Over the counter的缩写，OTC(Over the counter)柜台交易，意思是金融品交易双方脱离交易所监管的情况下直接交易。 DOTC则是在区块链上实现的去中心化OTC交易。
 ### DOTC具有如下特点：
 * 1,资产安全：交易双方的链上资产(比如某种加密货币，目前支持的最为广泛的是USDT)，均保存在区块链上一个开源的智能合约。除双方指定的第三方法院以及交易双方满足一定条件以外，没有其他任何人可以从该智能合约中取走您的资产。与传统的中心化交易所相比，您不用担心交易所由于某种原因破产而让您遭受损失。
