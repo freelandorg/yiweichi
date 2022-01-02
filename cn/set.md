@@ -1,8 +1,8 @@
 ---
-sort: 7
+sort: 5
 ---
 
-# 获取哈耶克币
+# 使用前设置
 &ensp;&ensp;&ensp;&ensp;如果你想取得哈耶克币，首先你需要准备一个钱包。我们推荐大家使用 ![MetaMask](https://metamask.io/images/favicon.png)MetaMask钱包,<a href="https://metamask.io" target="_blank">点击这里即可进入MetaMask的官方网站</a>下载安装.如果你在中国大陆地区，你可能需要翻墙上网.
 
 ## 准备好你的钱包
