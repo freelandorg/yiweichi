@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://192.168.31.153:4000/sitemap.xml
+Sitemap: dotc.trade/sitemap.xml
