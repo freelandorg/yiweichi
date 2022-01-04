@@ -23,4 +23,4 @@
 
 <p align="center"><a href="/dotc/#/allOrders"  ><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=30px height=30px><font size="5">进入DOTC交易</font><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=30px height=30px> </a></p>
 
-<p align="center"><a href="https://t.me/hayekchain"  ><img src="/assets\images/telegram.svg" width=20px height=20px><font size="4">加入电报群</font><img src="/assets\images/telegram.svg" width=20px height=20px> </a></p>
+<p align="center"><a href="https://t.me/hayekchain"  ><img src="/assets\images/telegram.svg" width=20px height=20px><font size="3">加入电报群</font><img src="/assets\images/telegram.svg" width=20px height=20px> </a></p>
