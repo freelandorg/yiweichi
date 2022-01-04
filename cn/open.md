@@ -16,10 +16,10 @@ sort: 2
 
 * [在哈耶克链上的官方法院judge合约](https://explorer.hayek.link/address/0x0a44ac0dCfe71De756876c7E6d93DF4a7440ae42/contracts)
 
-* [在OEC链上的Multicall合约](https://www.oklink.com/zh-cn/oec/address/0x5de2994114e740a3bd049c74d6ae06529f6c99c6)
+* [在OKExChain链上的Multicall合约](https://www.oklink.com/zh-cn/oec/address/0x5de2994114e740a3bd049c74d6ae06529f6c99c6)
 
-* [在OEC链上的Trading合约](https://www.oklink.com/zh-cn/oec/address/0x444099e7194a80acaf1b436f32f6b61f297491e4)
+* [在OKExChain链上的Trading合约](https://www.oklink.com/zh-cn/oec/address/0x444099e7194a80acaf1b436f32f6b61f297491e4)
 
-* [在OEC上的官方法院judge合约](https://www.oklink.com/zh-cn/oec/address/0xab8c2a0eaced47aecb9b3d25279f27df354988bb)
+* [在OKExChain链上的官方法院judge合约](https://www.oklink.com/zh-cn/oec/address/0xab8c2a0eaced47aecb9b3d25279f27df354988bb)
 
 
