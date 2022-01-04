@@ -25,6 +25,23 @@
       "logoURI": "https://dotc.trade/0xb7C8d76587DbE244d25a76555aEBcB2dd77ae4F0.png"
     }, 
     {
+      "chainId": 66,
+      "address": "0x8f8526dbfd6e38e3d8307702ca8469bae6c56c15",
+      "name": "Wrapped OKT",
+      "symbol": "WOKT",
+      "decimals": 18,
+      "logoURI": "https://static.oklink.com/cdn/explorer/icon/pool/okt.png"
+    },
+    
+    {
+      "chainId": 66,
+      "address": "0x382bb369d343125bfb2117af9c149795c6c65c50",
+      "name": "USDT",
+      "symbol": "USDT",
+      "decimals": 18,
+      "logoURI": "https://dotc.trade/0xb7C8d76587DbE244d25a76555aEBcB2dd77ae4F0.png"
+    }, 
+    {
       "chainId": 1000,
       "address": "0xf3DD11F7d8fA791c2Da46a5D26634592E417Af6C",
       "name": "WHYK",
@@ -45,6 +62,6 @@
   "version": {
     "major": 6,
     "minor": 2,
-    "patch": 0
+    "patch": 1
   }
 }
