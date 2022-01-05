@@ -1,7 +1,7 @@
 <p align="center"> Decentralized Over The Counter</p>
 <p align="center"> 全球最安全的去中心化虚拟货币C2C交易平台</p>
 <p align="center"> HTTPS://DOTC.TRADE</p>
-<p align="center"><a href="/dotc/#/allOrders"  ><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=30px height=30px><font size="5">进入DOTC交易</font><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=30px height=30px> </a></p>
+<p align="center"><a href="/dotc/#/allOrders"  ><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=20px height=20px><font size="5">进入DOTC交易</font><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=20px height=20px> </a></p>
 &ensp;&ensp;&ensp;&ensp; DOTC是Decentralized Over The Counter的缩写，柜台交易(OTC)，意思是金融产品的交易对手脱离交易所监管直接交易。 DOTC则是在区块链上实现的去中心化OTC交易。用于个人对个人的虚拟货币担保交易。
 
 * ><font color=Blue face="黑体">资产安全：</font> 交易双方的链上资产(比如USDT)，均保存在区块链上一个开源的智能合约。除交易双方以外，其他任何人都无法从该智能合约中取走您的资产。与传统的中心化交易所相比，您不用担心交易所由于某种原因破产而遭受损失。
@@ -53,7 +53,7 @@
 * >9、链上法院判决后,买家需要自行点击执行判决,订单上的资产,智能合约会按照判决结果分配给双方.交易结束
 
 ### 高级交易指南:
-* >ATM现金存款买卖虚拟币
+* >ATM机现金存款买卖虚拟币
 
 ### 交易安全与欺诈防范
 
