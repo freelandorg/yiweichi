@@ -52,13 +52,14 @@
 * >8、通过电报联系链上法院,提供订单编号,提供买家已经付款的证据.等待链上法院判决.
 * >9、链上法院判决后,买家需要自行点击执行判决,订单上的资产,智能合约会按照判决结果分配给双方.交易结束
 
-### 高级交易指南:如何操作ATM现金存款买卖虚拟币
+### 高级交易指南:
+* >ATM现金存款买卖虚拟币
 
-### 交易安全指南与欺诈防范
+### 交易安全与欺诈防范
 
 ### 免责声明
 
 
 <p align="center"><a href="/dotc/#/allOrders"  ><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=30px height=30px><font size="5">进入DOTC交易</font><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=30px height=30px> </a></p>
 
-<p align="center"><a href="https://t.me/hayekchain"  ><img src="/assets\images/telegram.svg" width=20px height=20px><font size="3">加入电报群</font><img src="/assets\images/telegram.svg" width=20px height=20px> </a></p>
+<p align="center"><a href="https://t.me/hayekchain"  ><img src="/assets/images/telegram.svg" width=20px height=20px><font size="3">加入电报群</font><img src="/assets/images/telegram.svg" width=20px height=20px> </a></p>
