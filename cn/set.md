@@ -2,7 +2,7 @@
 sort: 5
 ---
 
-# 使用前设置
+# 使用DOTC前准备工作
 >DOTC支持多种区块链,比如[哈耶克链](https://hayek.link),[币安智能链](https://binance.org),[欧易的OKEx Chain(OEC)链](https://www.okex.com/oec),这些区块链都是与以太坊链类似,都支持EVM虚拟机的区块链.这类区块链都支持智能合约的运行.我们之所以目前并不支持以太坊链,原因其实只有一个,那就是以太坊链的交易Gas太过高昂.交易双方做一笔DOTC交易,支付的Gas费接近300美元.我想,这是我们的用户难以承受的费用.所以,我们才选择将DOTC部署在其他与以太坊EVM虚拟机完全兼容的其他区块链上.
 
 >你如果要使用DOTC服务,首先你需要准备一个钱包。我们推荐大家使用 ![MetaMask](https://metamask.io/images/favicon.png)MetaMask钱包,<a href="https://metamask.io" target="_blank">点击这里即可进入MetaMask的官方网站</a>还有[imToken钱包](https://token.im/).或者,你已经使用的其他支持以太坊的钱包.
@@ -54,88 +54,53 @@ HYK
 https://explorer.hayek.link
 ``` 
 
-### 在imToken中添加哈耶克节点
-&ensp;&ensp;&ensp;&ensp; 按照前文的方法安装好imToken钱包之后,按顺序点击: 我->使用设置->节点设置->ETHEREUM, 点右上角的+号,选择 "自定义" ,填写哈耶克网的的网络名称 HAYEK, RPC地址:https://rpc.hayek.link ,Chain ID:1000,Symbol:HYK, 区块浏览器:https://explorer.hayek.link
+### 添加币安链网络
+>添加方法与添加哈耶克链网络一样,只是使用以下参数
 
-## 挖矿
-
-&ensp;&ensp;&ensp;&ensp;哈耶克公链采用与以太坊当前版本完全一样的代码，并且，在很长一段时间内，我们没有必要重新发明轮子。与以太坊唯一不同的是，我们采用了与以太坊不同的创世块。所以，如果你有以太坊挖矿的经验，会很容易挖矿哈耶克币。一般情况下，矿工都是连接到一个矿池来挖矿。但是，目前由于哈耶克币挖矿的人数较少。所以，尚未建立矿池。我们欢迎您建立哈耶克币挖矿矿池。如果你建立了哈耶克币挖矿矿池。请发邮件给我们。admin@hayek.link ，我们会把您的矿池网站地址在本站列出。
-
-&ensp;&ensp;&ensp;&ensp;没有矿池，也可以独立挖矿。下面就介绍如何独立挖矿哈耶克币。
-当前哈耶克币挖矿人数较少，正是您加紧参与挖矿的好机会。
-### 挖矿需要的软件与硬件
-
-#### 1、在你的电脑上下载并安装以太坊软件geth. [点这里下载](https://github.com/ethereum/go-ethereum)
-#### 2、在你的电脑上下载并安装ethminer [点这里下载](https://github.com/ethereum-mining/ethminer)
-#### 3、你的电脑上至少需要一块ethminer 支持的独立显卡。一般来说，Nvidia与AMD独立显卡都可以支持。但是，为了挖矿效率，你还是需要一块运算能力较强的独立显卡。
-#### 4、按照本文之前的介绍，安装好MetaMask钱包并且添加好哈耶克网络。
-#### 5、你需要下载哈耶克网络的创世块配置JSON文件。[点这里下载，另存为 hayek.json](/hayek.json)。此文件用于初始化哈耶克网络的创世块。
-#### 6、你需要下载最新版本的哈耶克网络引导节点地址文件。[点这里下载，另存为static-nodes.json](/static-nodes.json)，此文件需要保存到你的挖矿软件目录 data下的geth目录下。data\geth\static-nodes.json
-### 挖矿操作
-1、创建哈耶克的创世区块。
-命令如下。其中，geth是以太坊的最新版本。 data 是指在当前目录下创建一个data文件夹，用来保存创世区块以及哈耶克后续区块数据。hayek.json文件从[这里下载到你当前目录](/hayek.json)
+网络名称
 ```key
-     geth --datadir data init hayek.json
+Binance Smart Chain Mainnet
 ``` 
-2、[点这里下载引导节点文件](/static-nodes.json)另存到您的data\geth 目录下。
-3、运行以下命令启动哈耶克公链节点钱包。如果你要理解以下命令各个参数的含义。[建议您点这里阅读geth的文档](https://geth.ethereum.org/docs/interface/command-line-options)
-特别需要注意的是，你需要将以下命令中的 0x3CEfe2a38fA388B6e25C2D3350eB8fB3A31ed0E8 这个地址替换为您自己的钱包地址。钱包地址可以从您的手机MetaMask钱包复制过来。当您开始挖矿之后，如果您挖到了哈耶克币。您就可以从您的手机钱包上看到相应的余额。
+RPC URL
 ```key
-    geth --networkid 1000 --datadir data   --port 30303   -ipcdisable -syncmode full --rpc --allow-insecure-unlock --rpccorsdomain "*" --rpcaddr=0.0.0.0 --rpcvhosts=* --rpcport 8080 --miner.etherbase 0x3CEfe2a38fA388B6e25C2D3350eB8fB3A31ed0E8 --mine --miner.threads=1  console 
+https://bsc-dataseed1.binance.org
 ``` 
-4、启动ethminer进行GPU高速挖矿。关于ethminer命令的各个参数，[请点这里阅读](https://github.com/ethereum-mining/ethminer#usage)
-如果你的显卡支持CUDA，则使用以下命令挖矿。
+链ID
 ```key
-    ethminer -U -P http://127.0.0.1:8080 
+56
 ``` 
-如果你的独立显卡支持OpenCL，则使用以下命令挖矿。
+符号
 ```key
-    ethminer -G -P http://127.0.0.1:8080 
+BNB
+``` 
+区块链浏览器URL
+```key
+https://bscscan.com
 ``` 
 
-### 简易挖矿软件包
-如果你不想那么复杂的设置挖矿软件,有一个傻瓜挖矿软件包.只需要在windows平台下载一个压缩文件.解压缩后就可以立即挖矿.[请点这里访问](https://hayekwakuang.github.io)
+### 添加OKEx Chain(OEC)网络
+>添加方法与添加哈耶克链网络一样,只是使用以下参数
 
-## 免费取得小额哈耶克币
-
-将您的钱包地址复制粘贴到下面的输入框。点 “Send”按钮即可申请到小额哈耶克币。申请之后，大约需要15到30秒才能在您的钱包看到余额.
-
-每个钱包地址限领一次。每次大约0.002哈耶克币.
-
-<form name="input" action="https://free.hayek.link/hayek/" method="get">
-您的钱包地址: <input type="text" name="to">
-<input type="submit" value="Send">
-</form>
-
-## 撰写哈耶克公链的介绍文章取得较大金额哈耶克币
-
-如果您在媒体上撰写了有关哈耶克币的介绍文章。请将您文章链接地址发邮件到 admin@hayek.link ，我们根据情况会赠送较大金额的哈耶克给您。请在您发表的文章末尾附上您的钱包地址。
-
-## 在微博，推特，脸书上宣传哈耶克公链免费取得哈耶克币
-
-
-<form name="input" action="https://free.hayek.link/weibo/" method="get">
-微博发帖所在地址: <input type="text" name="address">
-<input type="submit" value="Send">
-</form>
-
-
-## 开发基于哈耶克公链的Dapp获得较大金额的哈耶克币
-
-如果您已经开发了支持哈耶克链的相关软件。请与我们联系 admin@hayek.link ，我们会视情况给与您哈耶克币奖励。
-
-## 加入我们的开发团队，获得大量的哈耶克币
-
-如果您精通区块链相关软件开发，请与我们联系 admin@hayek.link ，欢迎您加入我们的团队。
-
-## 加入我们的宣传推广团队，获得大量哈耶克币
-
-如果您是媒体从业人员，有意协助我们宣传推广哈耶克链。我们将视情况给与您较大金额的哈耶克币作为奖励。
-
-## 交易哈耶克币
-
-[Uniswap on Hayek去中心化交易所(币币交易)](/trade)
-
-[去中心化OTC交易(法币交易)](https://hayek.link/dotc)
-
-
+网络名称
+```key
+OKExChain Mainnet
+``` 
+RPC URL
+```key
+https://exchainrpc.okex.org
+``` 
+链ID
+```key
+66
+``` 
+符号
+```key
+OKT
+``` 
+区块链浏览器URL
+```key
+https://www.oklink.com/okexchain
+``` 
+### 在imToken中添加节点
+>按照前文的方法安装好imToken钱包之后,按顺序点击: 我->使用设置->节点设置->ETHEREUM, 点右上角的+号,选择 "自定义" ,填写哈耶克网的的网络名称 HAYEK, RPC地址:https://rpc.hayek.link ,Chain ID:1000,Symbol:HYK, 区块浏览器:https://explorer.hayek.link
+>如果添加其他链,则使用前文中的其他参数即可.
