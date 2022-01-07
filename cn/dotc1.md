@@ -3,7 +3,7 @@ sort: 5
 ---
 
 # 去中心化柜台交易(D-OTC)
-&ensp;&ensp;&ensp;&ensp;去中心化柜台交易(D-OTC,Decentralized Over the Counter),是运行在哈耶克链上的去中心化的虚拟币与全球所有法定货币进行交易的去中心化平台.[交易平台网站](https://hayek.link/dotc)
+&ensp;&ensp;&ensp;&ensp;去中心化柜台交易(D-OTC,Decentralized Over the Counter),是运行在哈耶克链上的去中心化的虚拟币与法定货币进行交易的去中心化平台.[交易平台网站](https://hayek.link/dotc)
 ## 准备好你的钱包
 &ensp;&ensp;&ensp;&ensp;在使用D-OTC之前,你需要在您的电脑或者手机上安装好支持的钱包( Metamask或者imToken),并且在钱包中设置好Hayek链的网络参数.[详细请访问这里](https://hayek.link/cn/get.html#%E5%87%86%E5%A4%87%E5%A5%BD%E4%BD%A0%E7%9A%84%E9%92%B1%E5%8C%85)
 
