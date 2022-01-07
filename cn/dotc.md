@@ -1,5 +1,5 @@
 ---
-sort: 7
+sort: 5
 ---
 
 # 去中心化柜台交易(D-OTC)
@@ -7,7 +7,7 @@ sort: 7
 ## 准备好你的钱包
 &ensp;&ensp;&ensp;&ensp;在使用D-OTC之前,你需要在您的电脑或者手机上安装好支持的钱包( Metamask或者imToken),并且在钱包中设置好Hayek链的网络参数.[详细请访问这里](https://hayek.link/cn/get.html#%E5%87%86%E5%A4%87%E5%A5%BD%E4%BD%A0%E7%9A%84%E9%92%B1%E5%8C%85)
 
-# 中文版交易演示视频
+# 中文版交易演示视频（HAYEK 链）
 &ensp;&ensp;&ensp;&ensp;请大家提交各种语言版的D-OTC交易演示视频.被采用者,将会获赠10万HYK币,请联系telegram: @hayeklink
 <video id="video" controls="" preload="none" poster="D-OTC中文手机操作教程">
       <source id="mp4" src="https://ipfs.decoo.io/ipfs/QmQXTHnW7MoCuJtfrb4cE954t7Gs2HSCZ7KKT1djpVDVLk?filename=21-10-24-12-44-35.mp4" type="video/mp4">
