@@ -1,7 +1,7 @@
 ---
 sort: 3
 ---
-# DOTC.TRADE去中心化担保交易系统使用手册
+# 使用手册
 ## 系统工作原理图
 ![DOTC.TRADE](/assets/images/trade.png)
 
