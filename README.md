@@ -55,9 +55,8 @@
 ### 高级交易指南:
 * >ATM机现金存款买卖虚拟币.[详细](/cn/use.html#atm机现金存款交易)
 
-### [交易安全与欺诈防范](/cn/use.html)
+### [交易安全与欺诈防范](/cn/security.html)
 
-### [免责声明](/cn/)
 
 
 <p align="center"><a href="/dotc/#/allOrders"  ><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=30px height=30px><font size="5">进入DOTC交易</font><img src="https://dotc.trade/dotc/static/media/logo.7f64ab42.svg" width=30px height=30px> </a></p>
