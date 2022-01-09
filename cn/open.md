@@ -20,6 +20,6 @@ sort: 2
 
 * [在OKExChain链上的Trading合约](https://www.oklink.com/zh-cn/oec/address/0x444099e7194a80acaf1b436f32f6b61f297491e4)
 
-* [在OKExChain链上的官方法院judge合约](https://www.oklink.com/zh-cn/oec/address/0xab8c2a0eaced47aecb9b3d25279f27df354988bb)
+* [在OKExChain链上的官方法院judge合约](https://www.oklink.com/zh-cn/oec/address/0x0476Eb9220A9eC5E76B4857E16eBEC70B3b9a341)
 
 
