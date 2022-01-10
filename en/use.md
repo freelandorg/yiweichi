@@ -1,73 +1,65 @@
 ---
 sort: 3
 ---
-# 使用手册
-## 系统工作原理图
+# Manual of DOTC
+## System working principle diagram
 
 ![DOTC.TRADE](/assets/images/trade.png)
 
->如上图所示，图片中央位置为在区块链上的智能合约，当卖家要卖出虚拟币资产（比如USDT)的时候，他需要发布订单，每一个订单有一个唯一的编号。从1累加上去。订单号不会重复。
+>As shown in the picture above, the central position of the picture is the smart contract on the blockchain. When the seller wants to sell cryptocurrency assets (such as USDT), he needs to issue an order, and each order has a unique number. Add up from 1. Order numbers will not be repeated.
 
->卖家发布订单的时候，实际上dotc.trade的DApp客户端程序会申请用户的钱包向智能合约支付待售出的资产（比如USDT)，以基础币支付区块链网络的Gas费，以及以基础币支付的违约金。
+>When the seller publish an order, in fact, the DApp client program of dotc.trade will apply to the user's wallet to pay the asset to be sold (such as USDT) to the smart contract, pay the gas fee of the blockchain network with the native coin, and use the native coin to pay the gas fee of the blockchain network. Liquidated damages paid in native coin too.
 
->买家在订单上点击购买，那么，买家需要以基础币支付的Gas费，以及卖家设定的违约金，
+>The buyer clicks to buy on the order, then the buyer needs to pay the gas fee in the native coin and the liquidated damages set by the seller with native coin.
 
->Gas费是由区块链的矿工赚取。
+>Gas fees are earned by the miners of the blockchain.
 
-## 钱包安装与配置
+## Wallet installation and configuration
 
->DOTC支持多种区块链,比如[哈耶克链](https://hayek.link){:target="_blank"},[币安智能链](https://binance.org){:target="_blank"},[欧易的OKEx Chain(OEC)链](https://www.okex.com/oec){:target="_blank"},这些区块链都是与以太坊链类似,都支持EVM虚拟机的区块链.这类区块链都支持智能合约的运行.我们之所以目前并不支持以太坊链,原因其实只有一个,那就是以太坊链的交易Gas太过高昂.交易双方做一笔DOTC交易,支付的Gas费接近300美元.我想,这是我们的用户难以承受的费用.所以,我们才选择将DOTC部署在其他与以太坊EVM虚拟机完全兼容的其他区块链上.
+>DOTC supports multiple blockchains, such as [Hayek Chain](https://hayek.link){:target="_blank"},[Binance Smart Chain](https://binance.org){: target="_blank"},[OKEx Chain (OEC) chain](https://www.okex.com/oec){:target="_blank"}, these blockchains are all related to the Ethereum  Similarly, they all support EVM virtual machine . These types of blockchains support the operation of smart contracts. The reason why we do not currently support the Ethereum chain is actually only one reason, that is, the  Gas of the Ethereum  is too Expensive. When both parties make a DOTC transaction, the gas fee paid is close to $300. I think this is an unacceptable fee for our users. Therefore, we choose to deploy DOTC on other blockchain that are fully compatible with the Ethereum EVM virtual machine.
 
->你如果要使用DOTC服务,首先你需要准备一个钱包。我们推荐大家使用MetaMask钱包,<a href="https://metamask.io" target="_blank">点击这里即可进入MetaMask的官方网站</a>还有[imToken钱包](https://token.im/){:target="_blank"}.或者,你已经使用的其他支持以太坊的钱包.
-
->如果您在中国大陆地区，有些钱包你可能需要翻墙上网才能下载.如果您使用的是苹果系统,那么,在您的应用商店中您可能找不到对应的钱包软件.因为这类软件在中国大陆地区都被屏蔽.解决方法,推荐您在淘宝网或者其他网站购买一个美国或者香港的苹果ID.价格一般在5元人民币左右.或者,您可以更改您的apple ID国家地区为非中国大陆地区.如何更改你苹果Apple ID的国家地区，<a href="https://support.apple.com/zh-cn/HT201389" target="_blank">请点这里阅读相关说明</a>
-
-### 钱包安装
-
-#### 苹果手机上安装MetaMask钱包 
-
->登录您的美国或者香港的苹果ID在您的手机或者iPad,打开苹果应用商店中搜索Metamask或者imToken,即可下载安装相应的钱包.
-
-#### 安卓手机上安装MetaMask钱包
-
->安卓手机下载，如果你手机可以直接访问Google Play应用商店，则你可以直接在其中搜索到MetaMask或者imToken并且安装。但是，在中国大陆的绝大部分手机，都无法访问Google Play应用商店。此时，你可以访问如下网站下载apk文件进行安装。 [点这里进入下载页面](https://bafybeifunqckmw3qmhfeejeixkzzt5e3cd5ju2jwrajskyrtawwnx6uhda.ipfs.infura-ipfs.io/io.metamask_2021-08-30.apk)
-
-#### 安卓手机上安装imToken钱包
-
->对于imToken钱包,他们官网上有APK文件下载.您可以用浏览器点这里访问[imToken官网](https://token.im/){:target="_blank"}直接下载安装.
-
-#### Chrome浏览器上安装MetaMask钱包
-
->如果您使用的是windows系统,最为推荐的方式，是在您的电脑上下载安装MetaMask钱包。MetaMask钱包在windows,Linux，Mac电脑上都可以安装，但是，它不是一个独立可以运行的程序。而是一个浏览器的插件应用。首先，我们强烈推荐你在电脑上安装Chrome浏览器.[点击这里进入Chrome下载安装教程](https://support.google.com/chrome/answer/95346?hl=zh-Hans&co=GENIE.Platform%3DDesktop){:target="_blank"}
-
->在你安装好你的Chrome浏览器之后，启动你的Chrome浏览器，在chrome浏览器地址栏输入 chrome://extensions/ 进入扩展程序界面，搜索 MetaMask，按提示安装好MetaMask钱包并启用之后。你就可以在Chrome浏览器的右上角看到MetaMask钱包的图标。点击进入即可设置你的钱包。
+>If you want to use the DOTC service, you need to prepare a wallet first. We recommend everyone to use [MetaMask](https://metamask.io){:target="_blank"} wallet, and [imToken wallet](https://token.im){:target="_blank"}. Or, another Ethereum-enabled wallet you already use.
 
 
-### 配置你的钱包
 
-#### 保护好你的12(或者24)个英文单词
+### Wallet installation
 
->当你安装好了你的钱包之后，你首先要做的是按照提示创建你的钱包。需要注意的是，此时请准备好一张纸与一支笔，你需要记录下12或者24个英文单词。这些英文单词是由MetaMask(imToken)钱包随机生成的。这是生成你钱包私钥的机密信息。
+#### Install MetaMask Wallet on iPhone 
 
->请务必不要用手机拍照来保存在手机或者电子邮箱等不安全的地方。因为，一旦他人知晓你的这12(或24)个英文单词，那么，你的钱包里的所有资产将可以被转走。
+>Open the Apple App Store and search for Metamask or imToken to download and install the corresponding wallet.
 
->如果你把写下这12或者24个英文单词的纸条保存好。即便你的电脑或者手机丢失。你也可以通过这12(或24)个英文单词恢复你的钱包私钥。从而取回你钱包里的所有资产。
+#### Install MetaMask Wallet on Android Phone
 
-#### 添加HAYEK网络
+>Download it from your Android phone, open the Google Play app store, you can directly search for MetaMask or imToken and install it
 
->此时，你已经安装好了你的M钱包，同时，你也创建了你的钱包账户。
 
->在你的钱包主界面的上方位置，你会看到有一串 0x 开头字母数字串，你点击它，即可把你的钱包地址复制下来。粘贴到其他任何软件中去。你会发现你粘贴出来的字符串类似  0x3CEfe2a38fA388B6e25C2D3350eB8fB3A31ed0E8 这样一串0x开头的字符串.这就是你的钱包地址。这个地址可以向任何人公开，而不会让你的钱包里的资产被盗窃。
+#### Install MetaMask wallet on Chrome browser
 
->他人向你的钱包转账发送虚拟币，也需要知道您的这个钱包地址。钱包地址全球唯一。不会有其他人的钱包地址和你相同。
+>If you are using windows system, the most recommended way is to download and install MetaMask wallet on your computer. MetaMask wallet can be installed on Windows, Linux and Mac computers, however, it is not a standalone program that can be run. It is a browser plug-in application. First of all, we strongly recommend that you install the Chrome browser on your computer. [Click here to enter the Chrome download and installation tutorial](https://support.google.com/chrome/answer/95346?hl=zh-Hans&co=GENIE.Platform% 3DDesktop){:target="_blank"}
 
->你已经有了钱包地址，MetaMask钱包已经连接到了以太坊的区块链上。但是，你如果要使用哈耶克链或者其他链，那么，你需要在你的MetaMask钱包软件菜单中依次点击: “设置”->“网络"->"添加网络"。然后，按照下图的方式填写。再点击“保存”按钮。完成之后，您的钱包即可使用哈耶克链了。
+>After you have installed your Chrome browser, start your Chrome browser, enter chrome://extensions/ in the chrome browser address bar to enter the extension interface, search for MetaMask, follow the prompts to install the MetaMask wallet and enable it. You can see the MetaMask wallet icon in the upper right corner of the Chrome browser. Click to enter to set up your wallet.
+
+
+### Configure your wallet
+
+#### Protect your 12 (or 24) English mnemonics
+
+>After you have installed your wallet, the first thing you need to do is follow the prompts to create your wallet. It should be noted that at this time, please prepare a piece of paper and a pen, and you need to write down 12 or 24 English mnemonics. These English words are randomly generated by the MetaMask (imToken) wallet. This is the confidential information that generates your wallet's private key.
+
+
+#### Add HAYEK chain to your wallet
+
+>At the top of the main interface of your wallet, you will see a string of alphanumerics starting with 0x, you can click on it to copy your wallet address. Paste it into any other software. You will find that the string you pasted is similar to 0x3CEfe2a38fA388B6e25C2D3350eB8fB3A31ed0E8, a string starting with 0x. This is your wallet address. This address can be disclosed to anyone without the assets in your wallet being stolen.
+
+>When others send cryptocurrency to your wallet, they also need to know your wallet address. The wallet address is globally unique. No one else will have the same wallet address as yours.
+
+>You already have the wallet address and the MetaMask wallet is connected to the Ethereum blockchain. However, if you want to use Hayek chain or other chains, then you need to click in your MetaMask wallet software menu: "Settings" -> "Network" -> "Add Network". Then, fill in as shown below. Then click the "Save" button. Once done, your wallet is ready to use the Hayek chain.
 
 ![avatar](/imgs/1.jpg)
 
-您可以复制以下参数填写到您MetaMask网络配置中去。
+You can copy the following parameters into your MetaMask network configuration
 
-网络名称
+Network
 ```key
 HAYEK
 ``` 
@@ -75,24 +67,24 @@ RPC URL
 ```key
 https://rpc.hayek.link
 ``` 
-链ID
+Chain ID
 ```key
 1000
 ``` 
-符号
+Symbol
 ```key
 HYK
 ``` 
-区块链浏览器URL
+blockchain Explorer
 ```key
 https://explorer.hayek.link
 ``` 
 
-#### 添加Binance Smart Chain 币安链
+#### Add Binance Smart Chain to your wallet
 
->添加方法与添加哈耶克链网络一样,只是使用以下参数
+>The method of adding is the same as adding a Hayek chain network, except that the following parameters are used
 
-网络名称
+Network
 ```key
 Binance Smart Chain Mainnet
 ``` 
@@ -100,24 +92,24 @@ RPC URL
 ```key
 https://bsc-dataseed1.binance.org
 ``` 
-链ID
+Chain ID
 ```key
 56
 ``` 
-符号
+Symbol
 ```key
 BNB
 ``` 
-区块链浏览器URL
+Blockchain Explorer
 ```key
 https://bscscan.com
 ``` 
 
-#### 添加OKEx Chain(OEC)网络
+#### Add OKEx Chain(OEC) Network
 
->添加方法与添加哈耶克链网络一样,只是使用以下参数
+>The method of adding is the same as adding a Hayek chain network, except that the following parameters are used
 
-网络名称
+Network
 ```key
 OKExChain Mainnet
 ``` 
@@ -125,114 +117,112 @@ RPC URL
 ```key
 https://exchainrpc.okex.org
 ``` 
-链ID
+Chain ID
 ```key
 66
 ``` 
-符号
+Symbol
 ```key
 OKT
 ``` 
-区块链浏览器URL
+Blockchain Explorer
 ```key
 https://www.oklink.com/okexchain
 ``` 
 
-#### 在imToken中添加节点
+#### Add node in imToken
 
->按照前文的方法安装好imToken钱包之后,按顺序点击: 我->使用设置->节点设置->ETHEREUM, 点右上角的+号,选择 "自定义" 填写哈耶克网的的网络名称:HAYEK
+>After installing the imToken wallet according to the previous method, click in order: I->Usage Settings->Node Settings->ETHEREUM, click the + sign in the upper right corner, select "Custom" and fill in the network name of Hayek.com: HAYEK
 
->RPC地址:https://rpc.hayek.link
+>RPC:https://rpc.hayek.link
 
->链ID(Chain ID):1000
+>Chain ID(Chain ID):1000
 
->符号(Symbol):HYK
+>Symbol:HYK
 
->区块浏览器:https://explorer.hayek.link
+>Blockchain Explorer:https://explorer.hayek.link
 
->如果添加币安或者OKEx等其他链,则使用前文中的参数即可.
+>If you add other chains such as Binance or OKEx, you can use the parameters in the previous section.
 
 
-## 切换到相应的区块链
+## Switch to the corresponding blockchain
 
->imToken钱包：依次点击左下的“钱包”，点击最上方中央位置的链名称"Ethereum Mainnet",选择对应的链名称。
+>imToken wallet: Click "Wallet" in the lower left, click the chain name "Ethereum Mainnet" at the top center, and select the corresponding chain name.
 
->Metamask钱包：在钱包主界面，点击最上方的“Ethereum Main Network”,在下拉列表中选择相应的链名称即可。
+>Metamask wallet: On the main wallet interface, click "Ethereum Main Network" at the top, and select the corresponding chain name from the drop-down list.
 
->其他钱包：比如Token　Pocket钱包，操作方法非常类似。你只要找到钱包界面的Ethererum字样，基本上就可以找到你要切换的链名称。
+>Other wallets: such as Token Pocket wallet, the operation method is very similar. As long as you find the word Ethererum on the wallet interface, you can basically find the name of the chain you want to switch.
 
->如果找不到相应的链名称，则请查看前文添加相应的区块链进钱包。
 
-## 获得基础币
+## Get Native coin
 
->DOTC系统是一个去中心化的链上担保交易系统，买家卖家所有的操作，都需要支付Gas费。所以，你在使用DOTC之前，你必须在你的钱包中有足够的基础币。基础币就是在区块链上可以用来支付矿工Gas费的币种。以太坊的基础币是以太币ETH,币安智能链的基础币是BNB，OKEx链的基础币是OKT，哈耶克连的基础币是HYK
+>The DOTC system is a decentralized on-chain secured transaction system. All operations of buyers and sellers need to pay gas fees. So, before you can use DOTC, you must have enough native coins in your wallet. The native coin is the cryptocurrency that can be used to pay miners' gas fees on the blockchain. The native coin of Ethereum is ETH, the native coin of Binance Smart Chain is BNB, the native coin of OKEx chain is OKT, and the native coin of Hayek chain  is HYK
 
-### 哈耶克链（HAYEK)(推荐)
+### Hayek chain (HAYEK) (recommended)
 
->哈耶克链：哈耶克链的基础币是HYK，在哈耶克链上，获取基础币是最为容易的。您只需要在钱包里面访问DOTC.TRADE，过几分钟，系统就会自动往你的钱包地址上赠送少量HYK币。足够您完成购买USDT的操作。
+>Hayek chain: The basic currency of Hayek chain is HYK. On Hayek chain, it is easiest to obtain native coin. You only need to access DOTC.TRADE in your wallet, and after a few minutes, the system will automatically send a small amount of HYK coins to your wallet address. Enough for you to complete the purchase of USDT.
 
->在钱包中查看USDT：在哈耶克链上，USDT的合约地址为：0xa5E265Bf313b24476dA9681D61bDbdC03c66F271  ，在您的钱包里面，您需要复制该地址手工添加USDT代币进你的钱包。
+>View USDT in the wallet: On the Hayek chain, the contract address of USDT is: 0xa5E265Bf313b24476dA9681D61bDbdC03c66F271 . In your wallet, you need to copy this address and manually add USDT tokens into your walle
 
->添加USDT代币进imToken钱包:依次点击“钱包”，右边中间位置的+号按钮，自定义代币，粘贴合约地址，保存。
+>Add USDT token into imToken wallet: Click "Wallet" in turn, the + button in the middle on the right, customize the token, paste the contract address, and save.
 
->添加USDT代币进Metamask钱包:在钱包主界面，点击下方的“添加代币”，自定义代币，粘贴USDT智能合约地址进代币地址，点击添加代币按钮。
+>Add USDT token into Metamask wallet: On the wallet main interface, click "Add Token" below, customize the token, paste the USDT smart contract address into the token address, and click the Add Token button.
 
-### 币安链（Biance smart chain)
->币安链（Biance smart chain)：币安链的基础币是BNB，类似于以太坊上的以太币ETH，在币安链上，卖家和买家都必须先购买一定数量的BNB币。
+### Biance smart chain
+>Binance smart chain: The native coin of Binance Chain is BNB, which is similar to ETH on Ethereum. On Binance Chain, both sellers and buyers must first purchase a certain amount of BNB coins.
 
->获得BNB的方法有很多，但是，最简单的方法是到币安交易所购买BNB并且提现到自己钱包。[点这里进入币安交易所官网](https://www.binance.com/){:target="_blank"}
+>There are many ways to get BNB, but the easiest way is to buy BNB from Binance and withdraw it to your wallet. [Click here to enter the official website of Binance Exchange](https://www.binance.com/){:target="_blank"}
 
->提现BNB：在选择主网络的时候，请选择Biance Smart Chain(BEP20)
+>Withdraw BNB: When choosing the main network, please choose Biance Smart Chain(BEP20)
 
->提现USDT:作为卖家，您有可能也在币安交易所购买USDT，再在DOTC平台卖出。以赚取差价。此时，在选择主网络的时候，您也需要选择BEP20字样的选项。
+>Withdraw USDT: As a seller, you may also buy USDT on Binance Exchange, and then sell it on the DOTC platform. to earn the difference. At this point, when choosing the main network, you also need to choose the option BEP20.
 
->在钱包中查看USDT：在币安链上，USDT的合约地址为：0x55d398326f99059fF775485246999027B3197955，在某些钱包里面，您可能需要复制该地址手工添加USDT代币进你的钱包。
+>View USDT in the wallet: On Binance Chain, the contract address of USDT is: 0x55d398326f99059fF775485246999027B3197955. In some wallets, you may need to copy this address to manually add USDT tokens to your wallet.
 
->添加USDT代币进imToken钱包:依次点击“钱包”，右边中间位置的+号按钮，自定义代币，粘贴合约地址，保存。
+>Add USDT token into imToken wallet: Click "Wallet" in turn, the + button in the middle on the right, customize the token, paste the contract address, and save.
 
->添加USDT代币进Metamask钱包:在钱包主界面，点击下方的“添加代币”，自定义代币，粘贴USDT智能合约地址进代币地址，点击添加代币按钮。
+>Add USDT token into Metamask wallet: On the wallet main interface, click "Add Token" below, customize the token, paste the USDT smart contract address into the token address, and click the Add Token button.
 
-### OK链OKEx Chain (OEC)
+### OKEx Chain (OEC)
 
->OK链OKEx Chain (OEC)：OK链的基础币是OKT，在OK链上，卖家和买家都必须先购买一定数量的OKT币。
+>OKEx Chain (OEC): The native coin of the OK chain is OKT. On the OK chain, both sellers and buyers must first purchase a certain amount of OKT coins.
 
->获得OKT的方法有很多，但是，最简单的方法是到欧易交易所购买OKT并且提现到自己钱包。[点这里进入欧易交易所官网](https://www.okex.com){:target="_blank"}
+>There are many ways to get OKT, but the easiest way is to buy OKT from Euro Exchange and withdraw it to your wallet. [Click here to enter the official website of Okex Exchange](https://www.okex.com){:target="_blank"}
 
->提现OKT：在选择主网络的时候，提现网络请选择：OKT-OEC
+>Withdraw OKT: When choosing the main network, please choose the withdrawal network: OKT-OEC
 
->提现USDT:作为卖家，您有可能也在欧易交易所购买USDT，再在DOTC平台卖出。以赚取差价。此时，在选择提现网络的时候，你需要选择USDT-OEC
+>Withdraw USDT: As a seller, you may also buy USDT on Euro Exchange and sell it on the DOTC platform. to earn the difference. At this point, when choosing a withdrawal network, you need to choose USDT-OEC
 
->在钱包中查看USDT：在OK链上，USDT的合约地址为：0x382bb369d343125bfb2117af9c149795c6c65c50，在某些钱包里面，您可能需要复制该地址手工添加USDT代币进你的钱包。
+>Check USDT in the wallet: On the OK chain, the contract address of USDT is: 0x382bb369d343125bfb2117af9c149795c6c65c50. In some wallets, you may need to copy this address to manually add USDT tokens into your wallet.
 
->添加USDT代币进imToken钱包:依次点击“钱包”，右边中间位置的+号按钮，自定义代币，粘贴合约地址，保存。
+>Add USDT token into imToken wallet: Click "Wallet" in turn, the + button in the middle on the right, customize the token, paste the contract address, and save.
 
->添加USDT代币进Metamask钱包:在钱包主界面，点击下方的“添加代币”，自定义代币，粘贴USDT智能合约地址进代币地址，点击添加代币按钮。
+>Add USDT token into Metamask wallet: On the wallet main interface, click "Add Token" below, customize the token, paste the USDT smart contract address into the token address, and click the Add Token button.
 
-## 钱包内访问DOTC.TRADE
+## Use DOTC.TRADE in wallet
 
->不管是买入还是卖出操作，首先，你需要打开您的钱包，使用钱包中的DApp浏览器来访问[https://dotc.trade](https://dotc.trade){:target="_blank"}应用程序。
+>Whether it is a buy or sell operation, first, you need to open your wallet and use the DApp browser in the wallet to access [https://dotc.trade](https://dotc.trade){:target=" _blank"} application.
 
->imToken钱包：依次点击最下方的浏览，在最上方的输入框中输入 https://dotc.trade，点击“进入DOTC交易”
+>imToken Wallet: Click Browse at the bottom in turn, enter https://doc.trade in the input box at the top, and click it
 
->Metamast钱包：依次点左上角的三条横线，点击“浏览器”，在输入框中输入“https://dotc.trade",回车或者确认进入DOTC官网，点击“进入DOTC交易“。
+>Metamast Wallet: Click the three horizontal lines in the upper left corner, click "Browser", enter "https://doc.trade" in the input box, press Enter or confirm to enter the DOTC official website.
 
->其他钱包操作基本类似。
 
->操作成功后，您会看到一个粉红色背景的界面，右上角会出现您钱包的地址。证明您已经成功使用钱包登录进了DOTC系统。如果在右上角看不到您的钱包地址，则可能是您没有选择正确的区块链网路。
+>After the operation is successful, you will see an interface with a pink background, and the address of your wallet will appear in the upper right corner. Prove that you have successfully logged into the DOTC system using the wallet. If you don't see your wallet address in the upper right corner, you may not have selected the correct blockchain network.
 
-## 卖出操作
+## sell operation
 
->进入DOTC交易之后，依次点击“我的订单”，“发布订单”，即可进入发布订单界面。
+>After entering the DOTC transaction, click "My Order" and "publish" to enter the post order interface.
 
 ![卖出](/assets/images/publish.jpg)
 
-### 订单
+### Order
 
->订单是DOTC系统的基本概念，订单由卖家发布。每一个订单包括订单编号，所售代币（比如ＵＳＤＴ），数量，单价，货币（法定货币），卖家地址，买家地址，卖家违约金，买家违约金，第三方法院，订单描述信息等几个部分。
+>The order is the basic concept of the DOTC system, and the order is issued by the seller. Each order includes order number, tokens sold (such as USDT), quantity, unit price, currency (fiat currency), seller address, buyer address, seller liquidated damages, buyer liquidated damages, third-party courts, order description information, etc. several parts.
 
->订单一旦发布，即意味着已经冻结了卖家的两部分资产：待售资产（比如USDT）以及违约金(一般是基础币，比如ETH,BNB,OKT,HYK)
+>Once the order is published, it means that two parts of the seller's assets have been frozen: assets for sale (such as USDT) and liquidated damages (usually native, such as ETH, BNB, OKT, HYK)
 
->订单与订单之间的资产相互隔离：即便是同一个卖家的不同订单，资产都是相互独立的。法院在判决的时候，不能在判决A订单的时候却处置B订单的资产。
+>Assets between orders and orders are isolated from each other: even for different orders from the same seller, the assets are independent of each other. When the court makes a judgment, it cannot dispose of the assets of order B when it judges order A.
 
 #### 订单编号
 

@@ -1,8 +1,9 @@
 ---
-sort: 6
+sort: 7
 ---
 
-# DOTC开发进展
+# DOTC中文博客
+
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
 ```

@@ -1,8 +1,9 @@
 ---
-sort: 6
+sort: 1
 ---
 
-# DOTC开发进展
+# DOTC
+
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
 ```
