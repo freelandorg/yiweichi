@@ -553,6 +553,6 @@ https://www.oklink.com/okexchain
 
 >您在DOTC购买的USDT或者其他资产，需要转移到其他区块链，或者，您需要从其他区块链转移资产到OKEx Chain或者币安链，我们推荐使用他么的官方跨链桥。当然，您也可以直接购买的USDT充值进相应的交易所再提现到其他链，但是，这种方法会受到各个交易所每日提现限额的限制。如果你不想被交易所限制提现限额，我们建议你采用以下跨链桥。
 
-### [币安链跨链桥 https://www.binance.org/en/bridge](https://www.binance.org/cn/bridge)
+### [币安链跨链桥 https://www.binance.org/en/bridge](https://www.binance.org/cn/bridge){:target="_blank"}
 
 ### [OKEx 跨链桥 https://www.okex.com/cn/okex-bridge ](https://www.okex.com/cn/okex-bridge){:target="_blank"}
