@@ -16,9 +16,9 @@ sort: 3
 
 ## 钱包安装与配置
 
->DOTC支持多种区块链,比如[哈耶克链](https://hayek.link),[币安智能链](https://binance.org),[欧易的OKEx Chain(OEC)链](https://www.okex.com/oec),这些区块链都是与以太坊链类似,都支持EVM虚拟机的区块链.这类区块链都支持智能合约的运行.我们之所以目前并不支持以太坊链,原因其实只有一个,那就是以太坊链的交易Gas太过高昂.交易双方做一笔DOTC交易,支付的Gas费接近300美元.我想,这是我们的用户难以承受的费用.所以,我们才选择将DOTC部署在其他与以太坊EVM虚拟机完全兼容的其他区块链上.
+>DOTC支持多种区块链,比如[哈耶克链](https://hayek.link){:target="_blank"},[币安智能链](https://binance.org){:target="_blank"},[欧易的OKEx Chain(OEC)链](https://www.okex.com/oec){:target="_blank"},这些区块链都是与以太坊链类似,都支持EVM虚拟机的区块链.这类区块链都支持智能合约的运行.我们之所以目前并不支持以太坊链,原因其实只有一个,那就是以太坊链的交易Gas太过高昂.交易双方做一笔DOTC交易,支付的Gas费接近300美元.我想,这是我们的用户难以承受的费用.所以,我们才选择将DOTC部署在其他与以太坊EVM虚拟机完全兼容的其他区块链上.
 
->你如果要使用DOTC服务,首先你需要准备一个钱包。我们推荐大家使用 ![MetaMask](https://metamask.io/images/favicon.png)MetaMask钱包,<a href="https://metamask.io" target="_blank">点击这里即可进入MetaMask的官方网站</a>还有[imToken钱包](https://token.im/).或者,你已经使用的其他支持以太坊的钱包.
+>你如果要使用DOTC服务,首先你需要准备一个钱包。我们推荐大家使用MetaMask钱包,<a href="https://metamask.io" target="_blank">点击这里即可进入MetaMask的官方网站</a>还有[imToken钱包](https://token.im/){:target="_blank"}.或者,你已经使用的其他支持以太坊的钱包.
 
 >如果您在中国大陆地区，有些钱包你可能需要翻墙上网才能下载.如果您使用的是苹果系统,那么,在您的应用商店中您可能找不到对应的钱包软件.因为这类软件在中国大陆地区都被屏蔽.解决方法,推荐您在淘宝网或者其他网站购买一个美国或者香港的苹果ID.价格一般在5元人民币左右.或者,您可以更改您的apple ID国家地区为非中国大陆地区.如何更改你苹果Apple ID的国家地区，<a href="https://support.apple.com/zh-cn/HT201389" target="_blank">请点这里阅读相关说明</a>
 
@@ -30,15 +30,15 @@ sort: 3
 
 #### 安卓手机上安装MetaMask钱包
 
->安卓手机下载，如果你手机可以直接访问Google Play应用商店，则你可以直接在其中搜索到MetaMask或者imToken并且安装。但是，在中国大陆的绝大部分手机，都无法访问Google Play应用商店。此时，你可以访问如下网站下载apk文件进行安装。![avatar](https://metamask.io/images/favicon.png) [点这里进入下载页面](https://bafybeifunqckmw3qmhfeejeixkzzt5e3cd5ju2jwrajskyrtawwnx6uhda.ipfs.infura-ipfs.io/io.metamask_2021-08-30.apk)
+>安卓手机下载，如果你手机可以直接访问Google Play应用商店，则你可以直接在其中搜索到MetaMask或者imToken并且安装。但是，在中国大陆的绝大部分手机，都无法访问Google Play应用商店。此时，你可以访问如下网站下载apk文件进行安装。 [点这里进入下载页面](https://bafybeifunqckmw3qmhfeejeixkzzt5e3cd5ju2jwrajskyrtawwnx6uhda.ipfs.infura-ipfs.io/io.metamask_2021-08-30.apk)
 
 #### 安卓手机上安装imToken钱包
 
->对于imToken钱包,他们官网上有APK文件下载.您可以用浏览器点这里访问[imToken官网](https://token.im/)直接下载安装.
+>对于imToken钱包,他们官网上有APK文件下载.您可以用浏览器点这里访问[imToken官网](https://token.im/){:target="_blank"}直接下载安装.
 
 #### Chrome浏览器上安装MetaMask钱包
 
->如果您使用的是windows系统,最为推荐的方式，是在您的电脑上下载安装MetaMask钱包。MetaMask钱包在windows,Linux，Mac电脑上都可以安装，但是，它不是一个独立可以运行的程序。而是一个浏览器的插件应用。首先，我们强烈推荐你在电脑上安装Chrome浏览器.[点击这里进入Chrome下载安装教程](https://support.google.com/chrome/answer/95346?hl=zh-Hans&co=GENIE.Platform%3DDesktop)
+>如果您使用的是windows系统,最为推荐的方式，是在您的电脑上下载安装MetaMask钱包。MetaMask钱包在windows,Linux，Mac电脑上都可以安装，但是，它不是一个独立可以运行的程序。而是一个浏览器的插件应用。首先，我们强烈推荐你在电脑上安装Chrome浏览器.[点击这里进入Chrome下载安装教程](https://support.google.com/chrome/answer/95346?hl=zh-Hans&co=GENIE.Platform%3DDesktop){:target="_blank"}
 
 >在你安装好你的Chrome浏览器之后，启动你的Chrome浏览器，在chrome浏览器地址栏输入 chrome://extensions/ 进入扩展程序界面，搜索 MetaMask，按提示安装好MetaMask钱包并启用之后。你就可以在Chrome浏览器的右上角看到MetaMask钱包的图标。点击进入即可设置你的钱包。
 
@@ -180,7 +180,7 @@ https://www.oklink.com/okexchain
 ### 币安链（Biance smart chain)
 >币安链（Biance smart chain)：币安链的基础币是BNB，类似于以太坊上的以太币ETH，在币安链上，卖家和买家都必须先购买一定数量的BNB币。
 
->获得BNB的方法有很多，但是，最简单的方法是到币安交易所购买BNB并且提现到自己钱包。[点这里进入币安交易所官网](https://www.binance.com/)
+>获得BNB的方法有很多，但是，最简单的方法是到币安交易所购买BNB并且提现到自己钱包。[点这里进入币安交易所官网](https://www.binance.com/){:target="_blank"}
 
 >提现BNB：在选择主网络的时候，请选择Biance Smart Chain(BEP20)
 
@@ -196,7 +196,7 @@ https://www.oklink.com/okexchain
 
 >OK链OKEx Chain (OEC)：OK链的基础币是OKT，在OK链上，卖家和买家都必须先购买一定数量的OKT币。
 
->获得OKT的方法有很多，但是，最简单的方法是到欧易交易所购买OKT并且提现到自己钱包。[点这里进入欧易交易所官网](https://www.okex.com)
+>获得OKT的方法有很多，但是，最简单的方法是到欧易交易所购买OKT并且提现到自己钱包。[点这里进入欧易交易所官网](https://www.okex.com){:target="_blank"}
 
 >提现OKT：在选择主网络的时候，提现网络请选择：OKT-OEC
 
@@ -210,7 +210,7 @@ https://www.oklink.com/okexchain
 
 ## 钱包内访问DOTC.TRADE
 
->不管是买入还是卖出操作，首先，你需要打开您的钱包，使用钱包中的DApp浏览器来访问https://dotc.trade应用程序。
+>不管是买入还是卖出操作，首先，你需要打开您的钱包，使用钱包中的DApp浏览器来访问[https://dotc.trade](https://dotc.trade){:target="_blank"}应用程序。
 
 >imToken钱包：依次点击最下方的浏览，在最上方的输入框中输入 https://dotc.trade，点击“进入DOTC交易”
 
@@ -549,3 +549,10 @@ https://www.oklink.com/okexchain
 
 >超过不合理的时间确认放款，可能会遭到买家起诉。
 
+## 资产跨链
+
+>您在DOTC购买的USDT或者其他资产，需要转移到其他区块链，或者，您需要从其他区块链转移资产到OKEx Chain或者币安链，我们推荐使用他么的官方跨链桥。当然，您也可以直接购买的USDT充值进相应的交易所再提现到其他链，但是，这种方法会受到各个交易所每日提现限额的限制。如果你不想被交易所限制提现限额，我们建议你采用以下跨链桥。
+
+### [币安链跨链桥 https://www.binance.org/en/bridge](https://www.binance.org/cn/bridge)
+
+### [OKEx 跨链桥 https://www.okex.com/cn/okex-bridge ](https://www.okex.com/cn/okex-bridge){:target="_blank"}
