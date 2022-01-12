@@ -450,6 +450,9 @@
 "Please wait buyer transfer to you":"请等待买家付款",
 "You can dispute this order after ":"您可以于",
 " blocks":"个区块之后发起争议(起诉)",
+"Others":"其他",
+"Wait hours Confirm":"等待几小时放款",
+"Require Buyer KYC":"需要买家做KYC",
 ", only if you still have not receive the transfer of buyer.":"(若届时您仍未收到买家付款)",
 ", only if you paid the buyer but he or she don't confirm the order to transfer the selling token to you.":"(若届时您已向卖家付款，但卖家不确认放币给您)"
 
