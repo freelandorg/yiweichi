@@ -325,6 +325,7 @@
 "Please input Alipay account,not phone number or e-mail.":"请务必输入支付宝账号，而非电话号码或者邮件地址，否则您可能会面临不公平的败诉风险而损失金钱.",
 "Please input WeChat account,not phone number.":"请务必输入微信账号，而非手机号，否则您可能会面临不公平的败诉风险而损失金钱。",
 "Show after locked":"锁定订单后显示",
+"Wallet Address":"收款虚拟币地址",
 "Unverified Court":"未经验证的法院",
 "Select Currency":"选择货币",
 "Payment Currency":"付款货币",
