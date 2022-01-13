@@ -66,3 +66,217 @@ sort: 4
 >买家则需要注意,如果您看到的卖家订单中显示的法院为"未经验证的法院",则需要您自行判断该法院是否具有可信度.
 
 >我们欢迎全球各地的律师,法官,律师事务所到区块链上建立自己的链上法院合约.我们相信,这是未来区块链链上治理的重要一环.您及早的介入这个行业,将会取得先机.
+
+### 如何自建法院
+>第一步，您首先要学习有关智能合约编写的相关知识，智能合约一般非常短小，稍微有一点编程基础的人，都可以很快学会智能合约的编写。编写智能合约，和其他的计算机程序编写一样，有许多不同的编程语言，不过，目前最主流的语言是Solidity语言，这是一种类似Java的语言。如果对solidity语言完全没有接触过，建议你先访问[solidity的官方网站的文档](https://docs.soliditylang.org/)。也可以在Google搜索Solidity的各种语言的教程。
+
+>当你简单了解了智能合约以及Solidity语言之后，那么，你可以查看本网站的开放代码页面，找到有关Juadge合约的链接。可以查看我们官方法院或者其他法院的代码来进行参考学习。
+
+官方法院的源代码：
+```Solidity
+/**
+ *Submitted for verification at BscScan.com on 2021-12-31
+*/
+
+//SPDX-License-Identifier:MIT
+//optimizer 30000 0.8.10 default
+pragma solidity ^0.8.10;
+pragma experimental ABIEncoderV2;
+interface judgeStandard{
+    function dispute(uint id,uint8 requirePrecentSubjectToseller,uint8 requirePrecentDepositToseller) external payable returns(bool r);
+    function getResult(uint id) external returns (uint8 precentSubjectToseller,uint8 precentDepositToseller,bool resultState);
+    function getArbitrationFee(uint id) external returns(uint arbitrationFee);
+    
+    function getUrl() external returns(string memory);
+    function getName() external returns(string memory);
+}
+    struct Order{
+       uint salenumber;
+       uint price;
+       uint lockedblocknumber;
+       address payable seller;
+       address payable buyer;
+       address arbitration;
+       address erc20address;
+       uint sellerLiquidataedDamages;
+       uint buyerLiquidataedDamages;
+       string describe;
+       string Currency;
+       uint8 state;   //0 put 1 lock 2 complete 3 judge
+    }
+interface trading{
+       function getOrderInfo(uint index) external view returns(Order memory);
+}
+contract judge{
+    struct Case{
+        string sellerProof;
+        string buyerProof;
+        uint8 precentSubjectToseller;
+        uint8 precentDepositToseller;
+        bool resultState;
+        uint disputedBlockNum;
+    }
+    struct CaseProof{
+        uint id;
+        Case caseInfo;
+        Order orderInfo;
+    }
+     mapping(uint=>Case) public allCase;
+     mapping(address=>uint[]) myCase;
+     uint[] public judgingCase;
+     address payable private owner;
+     mapping(address => bool) public judger;
+     string public constant url = "https://dotc.trade/cn/court.html";
+     string public constant name =  "D-OTC Official Court";
+     uint public Fee;
+     address public tradingAddress=0x5De2994114e740A3BD049c74D6aE06529F6C99c6;
+     
+     constructor(){
+        owner=payable(msg.sender);
+        Fee=1000 ether;
+    }
+    
+     function getUrl() public pure returns(string memory){
+         return url;
+     }
+    
+     function getName() public pure returns(string memory){
+         return name;
+     }
+
+     function setFee(uint fee) public returns(bool){
+         require(owner==msg.sender);
+         Fee=fee;
+         return true;
+     }
+
+     function toJudge(uint id,uint8 precentSubjectToseller,uint8 precentDepositToseller) public returns(bool){
+         require(msg.sender==owner||judger[msg.sender],"you can not judge");
+         require(allCase[id].disputedBlockNum!=0,"wrong id to judge");
+         allCase[id].precentDepositToseller=precentDepositToseller;
+         allCase[id].precentSubjectToseller=precentSubjectToseller;
+         allCase[id].resultState=true;
+         return true;
+     }
+     
+     function dispute(uint id,uint8 requirePrecentSubjectToseller,uint8 requirePrecentDepositToseller) public  payable returns(bool r){
+         require(msg.value==Fee,"wrong msgvalue");
+         require(msg.sender==tradingAddress,"wrong smart contract address");
+         require(allCase[id].disputedBlockNum==0,"this case is accepted,you can not dispute it again.");
+         judgingCase.push(id);
+         allCase[id].disputedBlockNum=block.number;
+         Order memory d = trading(tradingAddress).getOrderInfo(id);
+         myCase[d.seller].push(id);
+         myCase[d.buyer].push(id);
+         return true;
+     }
+     
+     function getResult(uint id) public view returns (uint8 precentSubjectToseller,uint8 precentDepositToseller,bool resultState){
+         precentSubjectToseller=allCase[id].precentSubjectToseller;
+         precentDepositToseller=allCase[id].precentDepositToseller;
+         resultState=allCase[id].resultState;
+     }
+     
+     function getArbitrationFee(uint id) public view returns(uint arbitrationFee){
+         arbitrationFee= Fee;
+     }
+     
+     function getWaitingForJudgingCase(uint linenumber) public view returns(CaseProof[] memory r){
+         r = new CaseProof[](linenumber);
+         uint x=0;
+         uint length=judgingCase.length;
+         for(uint i=0;i<length&&x<linenumber;i++){
+             uint index = judgingCase[length-i-1];
+             if(allCase[index].resultState==false){
+                 CaseProof memory temp = CaseProof(index,allCase[index],trading(tradingAddress).getOrderInfo(index));
+                 r[x]=temp;
+                 x++;
+             }
+         }
+     }
+     
+     function getMyCase(address sender,uint linenumber) public view returns(CaseProof[] memory r){
+         r = new CaseProof[](linenumber);
+         uint x=0;
+         uint length=myCase[sender].length;
+         for(uint i=0;i<length&&x<linenumber;i++){
+             uint index = myCase[sender][length-i-1];
+             CaseProof memory temp = CaseProof(index,allCase[index],trading(tradingAddress).getOrderInfo(index));
+             r[x]=temp;
+             x++;
+         }
+     }
+
+     function uploadProof(uint index,string memory proof) public returns(bool){
+        Order memory d = trading(tradingAddress).getOrderInfo(index);
+        require(msg.sender==d.buyer||msg.sender==d.seller,"You can not Upload proof for this case");
+        if(msg.sender==d.seller){
+            allCase[index].sellerProof=proof;
+        }else{
+            allCase[index].buyerProof=proof;
+        }
+        return true;
+     }
+
+     function withdraw(uint num) public returns(bool){
+         require(msg.sender==owner,"you are not owner");
+         owner.transfer(num);
+         return true;
+     }
+    
+    function manageJudger(address judgerAddr,bool state) public returns(bool){
+        require(msg.sender==owner,"you can not manage judger");
+        judger[judgerAddr]=state;
+        return true;
+    }
+}
+``` 
+>以上代码，是我们官方法院在币安链上的源代码。
+
+>您可以直接复制以上代码，[访问 Remix](https://remix.ethereum.org/) ，创建一个test.sol文件，将以上代码复制进去。然后，链接您的Metamask钱包，发布在对应的区块链上。
+
+>关于如何在Remix上编写和发布智能合约。请搜索相关文档。或者点这里查看[Remix官网文档](https://remix-ide.readthedocs.io/)
+
+#### 代码解释
+
+##### 法院合约的接口标准
+```key
+
+interface judgeStandard{
+    function dispute(uint id,uint8 requirePrecentSubjectToseller,uint8 requirePrecentDepositToseller) external payable returns(bool r);
+    function getResult(uint id) external returns (uint8 precentSubjectToseller,uint8 precentDepositToseller,bool resultState);
+    function getArbitrationFee(uint id) external returns(uint arbitrationFee);
+    
+    function getUrl() external returns(string memory);
+    function getName() external returns(string memory);
+}
+
+```
+
+>以上代码，是一个法院的接口标准
+
+>在你的法院合约中，最少必须要实现接口中的5个函数。我们分别来解释
+
+>judge合约是一个生成和保存以及提供许多判决书的智能合约。
+
+>dispute函数，这个函数是由用户调用，用来发起争议（起诉），后续包括三个参数，发起争议的编号unit id，一般来说，在DOTC系统中，这个编号就是DOTC系统中的订单编号。uint8 requirePrecentSubjectToseller,uint8 requirePrecentDepositToseller这两个参数，分别是发起争议者的诉讼请求。都是两个整数。requirePrecentSubjectToseller参数的含义是指起诉者希望法院判决卖家（seller)拿走订单中的所售资产(一般是USDT)的百分比。比如，这个参数起诉者填写的是31，意味着，他认为卖家应该拿走该订单中的USDT总额的31%。requirePrecentDepositToseller参数代表的是起诉者认为卖家（seller)应该拿走违约金总额的比例。一般来说，一个订单中包括了买家支付的违约金以及卖家支付的违约金。（卖家违约金+买家违约金）*requirePrecentDepositToseller，就是支付给卖家的违约金总额。
+
+>你可能会问，剩余的部分给了谁？对了，剩余的部分全部给了买家。不会有任何多余的部分转给DOTC合约的开发者，或者法院自身。也就是说，无论法院如何判决，不影响DOTC项目方以及法院的利益。
+
+>dispute函数只是起诉者在起诉的时候希望法院这样判决。但是，在你的法院判决流程中，你可以不用按照起诉者的诉讼请求进行判决。这个时候，法院必须要输出一个判决结果。就是法院认为买卖双方应该拿到的比例。
+
+>getResult函数，就是返回法院经过调查以后所认为公平的判决结果。输入参数unit id，就代表在dotc中的订单编号。返回结果包括三个参数：uint8 precentSubjectToseller,uint8 precentDepositToseller,bool resultState。其中precentSubjectToseller是法院的判决书认为卖家应该分配到订单中的所售资产（一般是USDT)的百分比。requirePrecentDepositToseller参数代表的是法院认为卖家（seller)应该拿走违约金总额的比例。一般来说，一个订单中包括了买家支付的违约金以及卖家支付的违约金。（卖家违约金+买家违约金）*requirePrecentDepositToseller，就是支付给卖家的违约金总额。另外，还有一个返回结果resultState,这是一个布尔值。如果返回的是true，就代表这个判决是真实有效的。如果返回的是false，则代表这个判决实际上还没有生成。
+
+>这个getResult函数是由买卖双方在DOTC系统订单中点击执行判决，会执行DOTC的Trading合约中的执行(Excute)函数，然后由Excute函数调用订单中指定的法院合约的getResult函数，取得结果，然后，根据法院的判决结果分配订单中的资产。是的，Trading合约是DOTC的核心合约，它保管着买卖双方的所售资产以及违约金。也只有Trading合约能够对双方的资产进行转账操作。法院合约是不能直接分配买卖双方的资产的。而且，Trading合约也只是能根据法院的判决结果来处置买卖双方已经支付到订单中的资产，而不能处置买卖双方钱包里的未转移到订单中的其他资产。
+
+>getArbitrationFee这个函数，输入参数是uint id，一般来说是dotc中的订单编号。返回的结果是仲裁费金额（诉讼费），支付的币种是该区块链上的基础币（比如币安链上是BNB，哈耶克链上是HYK)。在这个函数中，法院合约可以简单的返回一个固定值。也可以是根据订单里面的资产数量计算出一个按比例收取的诉讼费金额。
+
+>getUrl函数，直接返回该法院合约的网站地址。一般来说，在DOTC系统中，会显示在法院名称旁边。用户通过这个网站链接访问法院的官网。在官网联系法院的法官进行举证与沟通。也就是说，法院的门户。
+
+>getName只是返回法院的名称。
+
+>任何人编写的智能合约，如果实现了以上几个函数，那么，就是一个可以运行的法院合约。
+
+
+
+
